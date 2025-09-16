@@ -1,0 +1,11 @@
+# Ignore the SQLite database
+db.sqlite3
+
+# Python/Django cruft
+*.pyc
+__pycache__/
+*.log
+
+# Virtual environments
+venv/
+.env
