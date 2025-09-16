@@ -51,7 +51,7 @@
       </a>
     {% endif %}
 
-    {% if user.is_authenticated and user != review.user %}
+    {% if user.is_authenticated %}
       <!-- Report visible to other logged-in users -->
       <form action="{% url 'movies.report_review' id=template_data.movie.id review_id=review.id %}" 
             method="post" style="display:inline;">
