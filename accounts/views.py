@@ -41,6 +41,12 @@ def signup(request):
             return render(request, 'accounts/signup.html', {'template_data': template_data})
 
 @login_required
+def report_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+    review.delete()  # instantly remove it
+    return redirect('movie_list')  # or wherever you want users redirected
+
+@login_required
 def orders(request):
     template_data = {}
     template_data['title'] = 'Orders'
