@@ -25,7 +25,8 @@ urlpatterns = [
     path('movies/', include('movies.urls')),
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls')),
+    path("petition/", include("petition.urls")),  # 👈 connects petition app
 ]
 
-urlpatterns += static(settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:  # 👈 only serve media in development
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
